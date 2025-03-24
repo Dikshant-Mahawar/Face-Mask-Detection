@@ -29,7 +29,7 @@ For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD
 
 * Normalization: Each image is resized to 96x96 and normalized using the formula:
 
-(CNN_Images/Screenshot%202025-03-24%20at%207.58.35%E2%80%AFPM.png)
+!(CNN_Images/Screenshot%202025-03-24%20at%207.58.35%E2%80%AFPM.png)
 
 * Label Encoding: Labels are one-hot encoded using to_categorical().
 
