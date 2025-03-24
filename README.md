@@ -51,13 +51,7 @@ For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD
 
     * The output layer uses Softmax activation for binary classification (mask/no mask).
 
-model = models.Sequential([
-    base_model,
-    layers.GlobalAveragePooling2D(),
-    layers.Dense(512, activation='relu'),
-    layers.Dropout(0.4),
-    layers.Dense(2, activation='softmax')
-])
+![x](CNN_Images/Screenshot 2025-03-24 at 7.58.59 PM)
 
 Optimizer: Adam optimizer with a learning rate of 0.0005.
 
@@ -73,11 +67,7 @@ Callbacks like EarlyStopping (patience=7) and ReduceLROnPlateau are used for bet
 
 Data augmentation enhances the dataset by introducing variability in image transformations.
 
-history = model.fit(datagen.flow(X_train, y_train, batch_size=BATCH_SIZE),
-                    epochs=EPOCHS,
-                    validation_data=(X_test, y_test),
-                    class_weight=class_weight_dict,
-                    callbacks=callbacks)
+![x](CNN_Images/Screenshot%202025-03-24%20at%207.59.20%E2%80%AFPM.png)
 
 4. Evaluation
 
@@ -90,8 +80,6 @@ Classification Report: Displays precision, recall, and F1-score for each class.
 y_pred = np.argmax(model.predict(X_test), axis=1)
 y_true = np.argmax(y_test, axis=1)
 
-conf_matrix = confusion_matrix(y_true, y_pred)
-sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues',
-             xticklabels=['No Mask', 'Mask'], yticklabels=['No Mask', 'Mask'])
+![x](CNN_Images/Screenshot%202025-03-24%20at%207.59.42%E2%80%AFPM.png)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
