@@ -1,17 +1,17 @@
 # Face Detection 
 This project focuses on the classification and segmentation of face masks in images. The following techniques have been employed:
 
-Machine Learning Classifiers: Random Forest, SVM, and Neural Network
-Convolutional Neural Network (CNN): For effective image classification
-Segmentation Techniques: Traditional methods such as edge detection and thresholding
-U-Net Architecture: For precise mask segmentation
+* Machine Learning Classifiers: Random Forest, SVM, and Neural Network
+* Convolutional Neural Network (CNN): For effective image classification
+* Segmentation Techniques: Traditional methods such as edge detection and thresholding
+* U-Net Architecture: For precise mask segmentation
 The methodology, along with detailed results and comparisons between traditional techniques and deep learning approaches, is thoroughly discussed.
 
-Contributors:
+**Contributors:**
 
-Siddeshwar Kagatikar (IMT2022026)
-Dikshant Mahawar (IMT2022549)
-Bhavya Kapadia (IMT2022095)
+* Siddeshwar Kagatikar (IMT2022026)
+* Dikshant Mahawar (IMT2022549)
+* Bhavya Kapadia (IMT2022095)
 
 
 # Dataset
@@ -20,34 +20,36 @@ For classification tasks, the dataset used is: <a>https://github.com/chandrikade
 
 For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD</a>. It contains the ground truth face masks in the form of binary images.
 
+# Methodology
+
 ## 2. Part B
-1. Data Loading and Preprocessing
+1. **Data Loading and Preprocessing**
 
-Image Size: 96x96 pixels
+* Image Size: 96x96 pixels
 
-Normalization: Each image is resized to 96x96 and normalized using the formula:
+* Normalization: Each image is resized to 96x96 and normalized using the formula:
 
-Screenshot 2025-03-24 at 7.58.35 PM.png
+(CNN_Images/Screenshot%202025-03-24%20at%207.58.35%E2%80%AFPM.png)
 
-Label Encoding: Labels are one-hot encoded using to_categorical().
+* Label Encoding: Labels are one-hot encoded using to_categorical().
 
-Data Augmentation: Applied transformations like rotation, width/height shift, shear, zoom, and horizontal flip using ImageDataGenerator to enhance model generalization.
+* Data Augmentation: Applied transformations like rotation, width/height shift, shear, zoom, and horizontal flip using ImageDataGenerator to enhance model generalization.
 
-2. Model Definition (CNN)
+2. **Model Definition (CNN)**
 
-Base Model: MobileNetV2 (pre-trained on ImageNet, with the top layer removed).
+* Base Model: MobileNetV2 (pre-trained on ImageNet, with the top layer removed).
 
-Layer Configuration:
+* Layer Configuration:
 
-The last 30 layers of MobileNetV2 are set to trainable.
+    * The last 30 layers of MobileNetV2 are set to trainable.
 
-A Global Average Pooling layer is added for feature extraction.
+    * A Global Average Pooling layer is added for feature extraction.
 
-A dense layer with 512 neurons and ReLU activation improves learning capacity.
+    * A dense layer with 512 neurons and ReLU activation improves learning capacity.
 
-Dropout (40%) is applied to reduce overfitting.
+    * Dropout (40%) is applied to reduce overfitting.
 
-The output layer uses Softmax activation for binary classification (mask/no mask).
+    * The output layer uses Softmax activation for binary classification (mask/no mask).
 
 model = models.Sequential([
     base_model,
