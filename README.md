@@ -21,8 +21,6 @@ For classification tasks, the dataset used is: <a>https://github.com/chandrikade
 For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD</a>. It contains the ground truth face masks in the form of binary images.
 
 # METHODOLOGY
-<<<<<<< HEAD
-=======
 
 ## 1. Part A
 
@@ -49,7 +47,6 @@ We have implemented two Machine Learning Classifiers and one Neural Network Clas
 
 #### Neural Network Classifier -> A fully connected neural network for binary classification with three hidden layers (64-64-32 neurons), ReLU activation, dropout for regularization, and a softmax output layer.
 
->>>>>>> 1d5bff3 (CNN)
 
 ## 2. Part B
 1. **Data Loading and Preprocessing**
@@ -109,7 +106,7 @@ Classification Report: Displays precision, recall, and F1-score for each class.
 y_pred = np.argmax(model.predict(X_test), axis=1)
 y_true = np.argmax(y_test, axis=1)
 
-![x](CNN_Images/Screenshot%202025-03-24%20at%207.59.42%E2%80%AFPM.png)
+![a](CNN_Images/Screenshot%202025-03-24%20at%207.59.42%E2%80%AFPM.png)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
 
@@ -184,7 +181,6 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     * The training loss stabilizes near zero, while the validation loss plateaus at a higher value.
     * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
 
-
 # RESULTS
 
 ## SVM
@@ -241,4 +237,5 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **Test Precision** | 94.02% |
 | **Test Recall**    | 94.02% |
 | **Test AUC**       | 0.9712 |
+
 
