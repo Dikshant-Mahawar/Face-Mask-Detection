@@ -21,6 +21,35 @@ For classification tasks, the dataset used is: <a>https://github.com/chandrikade
 For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD</a>. It contains the ground truth face masks in the form of binary images.
 
 # METHODOLOGY
+<<<<<<< HEAD
+=======
+
+## 1. Part A
+
+#### The code is divided into 3 parts: Feature Extraction, Data Preprocessing and Machine Learning Classifier Training
+
+
+## Feature Extraction
+
+**Histogram of Oriented Gradients (HOG):** HOG extracts structural and gradient information, making it effective for detecting object shapes and edges. The image is first resized to 128×128, converted to grayscale, and then processed into gradient histograms using 9 orientations, 8×8 pixel cells, and 2×2 block normalization.  
+
+**Local Binary Patterns (LBP):** LBP serves as a texture descriptor by analyzing neighboring pixel intensities to generate a binary pattern. Here, the grayscale image is transformed using an 8-point circular neighborhood LBP, and a histogram of these patterns is computed and normalized. This helps capture texture details, complementing HOG for improved classification.
+
+## Data Preprocessing
+
+The code preprocesses images by resizing them to 128×128 and converting them to grayscale for consistency. HOG extracts shape-based features, while LBP captures texture patterns. The extracted features are normalized using **StandardScaler** to ensure uniform distribution. The dataset is then split into **80% training and 20% testing** using **train-test split**, with **stratify** preserving class balance for better model performance. Hyperparameter tuning is done using GridSearch CV and RandomizedSearch CV.
+
+## Training The Machine Learning Models
+
+We have implemented two Machine Learning Classifiers and one Neural Network Classifier. The models are as follows:
+
+#### Support Vector Machine Classifier -> Best Parameters: {'C': 10, 'kernel': 'rbf'}
+
+#### Random Forest Classifier -> Best Parameters: {'max_depth': 27, 'min_samples_leaf': 5, 'min_samples_split': 3, 'n_estimators': 93}
+
+#### Neural Network Classifier -> A fully connected neural network for binary classification with three hidden layers (64-64-32 neurons), ReLU activation, dropout for regularization, and a softmax output layer.
+
+>>>>>>> 1d5bff3 (CNN)
 
 ## 2. Part B
 1. **Data Loading and Preprocessing**
@@ -155,10 +184,63 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     * The training loss stabilizes near zero, while the validation loss plateaus at a higher value.
     * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
 
-
 # RESULTS
 
+## PART-1
+
+### SVM
+
+### Classification Report
+
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| **0** (Without Mask) | 0.95 | 0.93 | 0.94 | 386 |
+| **1** (With Mask) | 0.94 | 0.96 | 0.95 | 433 |
+| **Accuracy** |  |  | **0.95** | 819 |
+| **Macro Avg** | 0.95 | 0.95 | 0.95 | 819 |
+| **Weighted Avg** | 0.95 | 0.95 | 0.95 | 819 |
+
+---
+
+### Confusion Matrix
+
+| Actual \ Predicted | 0 | 1 |
+|--------------------|----|----|
+| **0 (Without Mask)** | 359 | 27 |
+| **1 (With Mask)** | 17 | 416 |
 
 
+## RANDOM FOREST CLASSIFIER
+
+### Classification Report
+
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| **0** (Without Mask) | 0.96 | 0.85 | 0.90 | 386 |
+| **1** (With Mask) | 0.88 | 0.97 | 0.92 | 433 |
+| **Accuracy** |  |  | **0.91** | 819 |
+| **Macro Avg** | 0.92 | 0.91 | 0.91 | 819 |
+| **Weighted Avg** | 0.92 | 0.91 | 0.91 | 819 |
+
+---
+
+### Confusion Matrix
+
+| Actual \ Predicted | 0 | 1 |
+|--------------------|----|----|
+| **0 (Without Mask)** | 329 | 57 |
+| **1 (With Mask)** | 15 | 418 |
+
+
+### NEURAL NETWORK CLASSIFIER
+
+### Model Performance Metrics
+
+| Metric          | Value  |
+|----------------|--------|
+| **Test Accuracy**  | 94.02% |
+| **Test Precision** | 94.02% |
+| **Test Recall**    | 94.02% |
+| **Test AUC**       | 0.9712 |
 
 
