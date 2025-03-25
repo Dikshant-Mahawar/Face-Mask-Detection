@@ -302,7 +302,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 
 # RESULTS
 ## PART-A
-### SVM
+### I- SVM
 
 #### Classification Report
 
@@ -324,7 +324,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **1 (With Mask)** | 17 | 416 |
 
 
-### RANDOM FOREST CLASSIFIER
+### II- RANDOM FOREST CLASSIFIER
 
 #### Classification Report
 
@@ -346,7 +346,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **1 (With Mask)** | 15 | 418 |
 
 
-### NEURAL NETWORK CLASSIFIER
+### III- NEURAL NETWORK CLASSIFIER
 
 #### Model Performance Metrics
 
@@ -375,6 +375,8 @@ This graph illustrates the Training Accuracy and Validation Accuracy of our Conv
 
 ![acc1](CNN_Images/fin_loss.png)
 This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
+
+![rep](CNN_Images/report.png)
 
 ## PART-C
 After completing the segmentation for entire dataset, the average IoU is calculated. It turns out to be 0.44 . Some of the segmented outputs are shown below along with the ground truths:
