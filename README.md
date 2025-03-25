@@ -105,7 +105,7 @@ This face mask detection model includes several important hyperparameters and te
     * Values Tested: 0.3, 0.4, 0.5
     * Best Value: 0.4 (Effectively reduced overfitting without sacrificing performance).
 * **`Data Augmentation`**
-    Augmentation techniques tested:
+    * Augmentation techniques tested:
         * Rotation Range: 10°, 15°, 20° → Best: 15°
         * Width/Height Shift Range: 0.05, 0.1, 0.2 → Best: 0.1
         * Shear Range: 0.05, 0.1, 0.2 → Best: 0.1
@@ -114,7 +114,7 @@ This face mask detection model includes several important hyperparameters and te
 * **`Class Weighting`**
     * Balanced class weighting significantly improved performance on imbalanced datasets.
 * **`Base Model`** 
-    Layers unfrozen for fine-tuning:
+    * Layers unfrozen for fine-tuning:
         * Tested values: 20, 30, 40 layers unfrozen
         * Best Value: 30 layers unfrozen for optimal feature extraction.
 * **`Optimizer`**
