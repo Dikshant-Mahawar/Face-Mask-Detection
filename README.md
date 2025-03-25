@@ -431,13 +431,13 @@ The CNN model demonstrated slightly better performance than the traditional ML c
 
 Upon examining the provided images, several issues with the traditional segmentation method are apparent:  
 
-    * Inconsistent Mask Edges: The segmented mask boundaries are often uneven and fail to align accurately with the actual mask contours. Portions of the face, such as the forehead, chin, or cheeks, are sometimes mistakenly included in the mask region, while some mask areas may be omitted.  
+* Inconsistent Mask Edges: The segmented mask boundaries are often uneven and fail to align accurately with the actual mask contours. Portions of the face, such as the forehead, chin, or cheeks, are sometimes mistakenly included in the mask region, while some mask areas may be omitted.  
 
-    * Background/Foreground Confusion:** The method struggles with contrast-based misclassification. Bright elements like text on clothing or light reflections are occasionally mistaken as part of the mask. Conversely, darker mask regions, such as shadows or fabric folds, may be overlooked.  
+* Background/Foreground Confusion:** The method struggles with contrast-based misclassification. Bright elements like text on clothing or light reflections are occasionally mistaken as part of the mask. Conversely, darker mask regions, such as shadows or fabric folds, may be overlooked.  
 
-    * Fragmentation and Gaps:** The segmented masks frequently contain unintended "holes" where the mask is misclassified as background. Additionally, fragmented mask sections are common, further reducing segmentation accuracy.  
+* Fragmentation and Gaps:** The segmented masks frequently contain unintended "holes" where the mask is misclassified as background. Additionally, fragmented mask sections are common, further reducing segmentation accuracy.  
 
-    * Blackened Top Section:** The upper portion of the segmented images is consistently blacked out, suggesting a post-processing step was used to mask areas that were repeatedly misclassified. This indicates a workaround for persistent errors rather than an effective segmentation solution.  
+* Blackened Top Section:** The upper portion of the segmented images is consistently blacked out, suggesting a post-processing step was used to mask areas that were repeatedly misclassified. This indicates a workaround for persistent errors rather than an effective segmentation solution.  
 
 ---
 
@@ -445,13 +445,13 @@ Upon examining the provided images, several issues with the traditional segmenta
 
 In comparison, the U-Net model delivers significantly improved segmentation performance with the following advantages:  
 
-    * **Precise Boundary Detection:** The U-Net effectively maps the intricate contours of face masks, maintaining accuracy even with variations in lighting, mask color, and facial features.  
+* **Precise Boundary Detection:** The U-Net effectively maps the intricate contours of face masks, maintaining accuracy even with variations in lighting, mask color, and facial features.*  
 
-    * **Enhanced Robustness:** Unlike the traditional method, the U-Net remains reliable despite changes in contrast or lighting. It successfully distinguishes the mask region even in challenging conditions such as shadows or highlights.  
+* **Enhanced Robustness:** Unlike the traditional method, the U-Net remains reliable despite changes in contrast or lighting. It successfully distinguishes the mask region even in challenging conditions such as shadows or highlights.  
 
-    * **Complete and Connected Masks:** The U-Net produces well-defined mask regions without gaps or fragmented sections, ensuring consistency across images.  
+* **Complete and Connected Masks:** The U-Net produces well-defined mask regions without gaps or fragmented sections, ensuring consistency across images.  
 
-    * **Minimal Post-Processing:** The U-Net achieves superior results without relying on manual interventions like blacking out image portions or applying custom heuristics.
+* **Minimal Post-Processing:** The U-Net achieves superior results without relying on manual interventions like blacking out image portions or applying custom heuristics.
 
 
 
