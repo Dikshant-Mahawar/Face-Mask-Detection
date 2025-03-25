@@ -257,8 +257,36 @@ This graph illustrates the Training Accuracy and Validation Accuracy of our Conv
 ![acc1](CNN_Images/fin_loss.png)
 This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
 
-![acc1](CNN_Images/fin_conf.png)
-This confusion matrix shows that the model achieved strong performance, with 92 correct predictions for "No Mask" and 380 correct predictions for "Mask." There are minimal misclassifications, indicating effective handling of overfitting and improved generalization.
+
+# COMPARISON OF ML CLASSIFIERS AND CNN
+## Feature Extraction
+Two approaches were explored for feature extraction: traditional machine learning methods and a Convolutional Neural Network (CNN).
+
+* **`ML Classifiers (SVM, Random Forest, Neural Network):`** These models relied on hand-crafted features such as Histogram of Oriented Gradients (HOG) and Local Binary Patterns (LBP). These techniques are designed to capture important shape and texture details from the images.
+
+* **`CNN:`** The CNN automatically learned relevant features directly from the image data through its convolutional layers, eliminating the need for manual feature engineering.
+
+## Performance Comparison
+The CNN model demonstrated slightly better performance than the traditional ML classifiers.
+
+* **`CNN:`** Achieved a validation accuracy of about 97% with the best hyperparameters.
+* **`SVM:`** Achieved an accuracy of 93%.
+* **`Random Forest:`** Achieved an accuracy of 91%.
+* **`Neural Network:`** Achieved an accuracy of 94.02%.
+
+**Advantages and Disadvantages:**
+
+| Feature                       | ML Classifiers (SVM, RF, NN)                                                              | CNN                                                                                                                                          |
+| :---------------------------- | :------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feature Engineering           | Requires manual feature extraction (HOG, LBP).  This can be time-consuming and may not capture all relevant information.  Feature quality is crucial. | Learns features automatically from data.  No manual intervention needed. Can adapt to specific nuances of the dataset.                             |
+| Feature Representation        | Feature representation limited by the design and effectiveness of HOG and LBP.                 | Can learn complex, hierarchical feature representations that are tailored to the classification task.                                      |
+| Generalization              | Potentially limited generalization if hand-engineered features are not robust to variations. | Better generalization due to the ability to learn robust features and adapt to variations in the data.                                    |
+| Computational Complexity      | Lower computational complexity for training with a small number of data points.                 | Higher computational complexity, especially during training, due to the large number of parameters in the network.                          |
+| Data Requirements           | Can perform reasonably well with smaller datasets, as feature engineering reduces complexity.  | Requires a larger amount of training data to learn effective features and prevent overfitting.                                                |
+| Architecture Design         | A relatively simple model, so easier to design. | A very complex model so requires a detailed knowledge to build this correctly. |
+
+
+
 
 
 
