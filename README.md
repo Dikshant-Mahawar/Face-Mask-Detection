@@ -469,7 +469,7 @@ The output images for Part C and Part D are generated in the notebook when the c
    - Run all the code blocks sequentially.
 
 3. **Results**  
-   - The results of ML classifiers and the CNN model will be displayed in the notebook.
+   - The results of traditional techniques and U-NET will be displayed in the notebook.
 
 
 
