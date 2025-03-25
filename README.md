@@ -114,6 +114,70 @@ y_true = np.argmax(y_test, axis=1)
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
 
 ## 3. Part C
+1. **`Preprocessing & Contour Extraction`**
+   * The script loads grayscale images and applies *Gaussian Blur* to reduce noise.  
+   * *Thresholding* and *Canny Edge Detection* are applied to create binary masks.  
+   * The *largest contour* is extracted from the thresholded and edge-detected images to form segmentation masks.
+
+2. **`Mask Selection & Optimization`**  
+   * Two masks are generated: one from the original thresholded (or Canny) image and one from its inverse.  
+   * The *mask with more white pixels in the bottom half* is selected as the best candidate.
+
+3. **`Dice & IoU Score Computation`**  
+   * The extracted masks are compared with the *ground truth* masks using *Dice coefficient* and *Intersection over Union (IoU)* metrics.  
+   * Both *Thresholding-based* and *Canny-based* masks are evaluated.
+
+4. **`Saving Predicted Masks`**  
+   * A directory (/content/predicted_masks/) is created to store the predicted segmentation masks.  
+   * For each image, the *best threshold-based mask* is selected and saved as a binary image (0-255 format) in the directory.
+
+5. **`Visualization of Results`**  
+   * The top 3 images are displayed in a *3x3 grid* showing the *original image, extracted mask, and ground truth mask* for visual comparison.
+
+## 4. PART-D
+1. **`Data Loading and Preprocessing:`**
+    * Load image and segmentation file paths, ensuring both exist.  
+    * Split data into training (80%) and validation (20%) sets.  
+    * Resize images and masks to (128, 128), normalize images, and keep masks as uint8.  
+    * Use MSFDDataset class to load batches dynamically.
+
+2. **`Tech Stack Used:`**
+    * TensorFlow/Keras – Model training and data pipeline (tf.keras.utils.Sequence).
+
+    * OpenCV (cv2) – Image reading, resizing, and preprocessing.
+
+    * NumPy – Array operations and data handling.
+
+    * Scikit-learn – Train-test splitting (train_test_split).
+
+    * Python – General scripting and dataset management.
+
+3. **`Model Definition (U-Net):`**
+    *Input Layer:*  
+        - Accepts (128, 128, 3) RGB images.  
+
+    *Encoder (Contracting Path):*  
+        - depth configurable (3-5 layers).  
+        - base_filters chosen from {16, 32, 64}, doubling at each layer.  
+        - Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
+        - MaxPooling and Dropout (dropout_rate between 0.1-0.4) after each block.  
+
+    *Bottleneck:*  
+        - Two Conv2D layers at the lowest resolution.  
+
+    *Decoder (Expanding Path):*  
+        - Upsampling and skip connections from the encoder.  
+        - Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
+        - Dropout for regularization.  
+
+    *Output Layer:*  
+        - Conv2D with a 1x1 filter and sigmoid activation for binary segmentation.  
+
+    *Compilation:*  
+        - Optimizer: Adam with a tunable learning rate (1e-4 to 1e-2).  
+        - Loss: Binary Cross-Entropy.  
+        - Metrics: Accuracy, IoU, Dice Score.
+
 
 
 
