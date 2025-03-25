@@ -459,6 +459,8 @@ In comparison, the U-Net model delivers significantly improved segmentation perf
 ### Instructions to Run
 In the directory Code, there are 4 ipynb files - each corresponding to different parts - A,B,C,D (Part_A.ipynb,Part_B.ipynb,Part_C.ipynb,Part_D.ipynb)
 
+The output images for Part C and Part D are generated in the notebook when the code is run
+
 1. **Download Dataset**  
    - Download the zip file of the dataset.  
    - Set the `zip_path` variable in the notebook accordingly.
@@ -468,23 +470,6 @@ In the directory Code, there are 4 ipynb files - each corresponding to different
 
 3. **Results**  
    - The results of ML classifiers and the CNN model will be displayed in the notebook.
-
----
-
-### Instructions to Run
-
-1. **Download Dataset (First-Time Setup Only)**  
-   - If running the code for the first time, uncomment and execute the first three code blocks to download the dataset.
-   - The dataset will be downloaded in the root directory.
-
-2. **Execute Code Blocks**  
-   - Run all remaining code blocks sequentially.
-
-3. **Results**  
-   - The results for the U-Net model will be displayed in the notebook.
-   - The segmented outputs using traditional techniques will be saved in the `Output/PartC` directory.
-   - The average IoU for the traditional techniques will be displayed in t
-
 
 
 
