@@ -239,7 +239,9 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **Test AUC**       | 0.9712 |
 
 ## PART-B
-### Key Improvements to Control Overfitting: 
+### CONVOLUTION NEURAL NETWORK
+
+#### Key Improvements to Control Overfitting: 
     1. Enhanced data augmentation for better generalization.
     2. Increased dropout rates for stronger regularization.
     3. Added L2 regularization in dense layers.
