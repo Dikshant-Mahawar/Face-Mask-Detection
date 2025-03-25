@@ -42,7 +42,7 @@ The code preprocesses images by resizing them to 128×128 and converting them to
 We have implemented two Machine Learning Classifiers and one Neural Network Classifier. The models are as follows:
 
 #### Support Vector Machine Classifier -> Best Parameters: 
- 1. {'C': 10, 'kernel': 'rbf'}
+    1. {'C': 10, 'kernel': 'rbf'}
 
 #### Random Forest Classifier -> Best Parameters: 
     2. {'max_depth': 27, 'min_samples_leaf': 5, 'min_samples_split': 3, 'n_estimators': 93}
