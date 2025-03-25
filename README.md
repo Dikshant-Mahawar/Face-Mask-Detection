@@ -121,6 +121,42 @@ This face mask detection model includes several important hyperparameters and te
     * Values Tested: Adam, AdamW, RMSprop
     * Best Value: Adam with a learning rate of 0.0005.
 
+# Results
+
+## 2. Part B
+
+![cnn](CNN_Images/overfit_acc.png)
+
+This graph illustrates the Training Accuracy and Validation Accuracy of our Convolutional Neural Network (CNN) model over multiple epochs.
+
+### Observations
+* **`Early Phase (0-5 Epochs):`**
+    *The model quickly learns basic patterns, showing a steep rise in both training and validation accuracy.
+
+* **`Middle Phase (5-15 Epochs):`**
+    * The training accuracy continues improving steadily.
+    * The validation accuracy shows minor fluctuations, indicating the model is learning more complex features.
+* **`Late Phase (15+ Epochs):`**
+    * Training accuracy plateaus close to 100%, while validation accuracy stabilizes slightly lower.
+    * This suggests potential overfitting, where the model memorizes the training data instead of generalizing effectively.
+
+![cnn_loss](CNN_Images/overfit_loss.png)
+
+This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
+
+### Observations
+* **`Early Phase (0-5 Epochs):`**
+    * Both training and validation losses decrease rapidly, showing that the model is learning fundamental patterns effectively.
+    * The initial spikes in validation loss indicate unstable learning in the early stages, which is common.
+* **`Middle Phase (5-20 Epochs):`** 
+    * The training loss continues to decline steadily.
+    * The validation loss shows noticeable fluctuations but gradually decreases.
+* **`Late Phase (20+ Epochs):`**
+    * The training loss stabilizes near zero, while the validation loss plateaus at a higher value.
+    * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
+
+
+
 
 
 
