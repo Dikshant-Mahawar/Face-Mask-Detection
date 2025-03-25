@@ -83,3 +83,45 @@ y_true = np.argmax(y_test, axis=1)
 ![x](CNN_Images/Screenshot%202025-03-24%20at%207.59.42%E2%80%AFPM.png)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
+
+# Hyperparameters Tuning
+
+## 1. Part B
+This face mask detection model includes several important hyperparameters and techniques that were adjusted to improve performance. The following key hyperparameters and experiments were conducted:
+
+* **`IMG_SIZE`** 
+    * Values Tested: 64, 96, 128
+    * Best Value: 96 (Balanced performance between model complexity and accuracy).
+* **`BATCH_SIZE`**  
+    * Values Tested: 16, 32, 64
+    * Best Value: 32 (Optimal balance between convergence speed and memory efficiency).
+* **`LEARNING_RATE`**
+    * Values Tested: 0.001, 0.0005, 0.0001
+    * Best Value: 0.0005 (Improved convergence stability).
+* **`EPOCHS`** 
+    * Values Tested: 30, 50, 70
+    * Best Value: 50 (Good balance between convergence and overfitting).
+* **`Dropout Rate`**
+    * Values Tested: 0.3, 0.4, 0.5
+    * Best Value: 0.4 (Effectively reduced overfitting without sacrificing performance).
+* **`Data Augmentation`**
+    **Augmentation techniques tested:**
+    * Rotation Range: 10°, 15°, 20° → Best: 15°
+    * Width/Height Shift Range: 0.05, 0.1, 0.2 → Best: 0.1
+    * Shear Range: 0.05, 0.1, 0.2 → Best: 0.1
+    * Zoom Range: 0.05, 0.1, 0.2 → Best: 0.1
+    * Horizontal Flip: Enabled (Improved generalization).
+* **`Class Weighting`**
+    * Balanced class weighting significantly improved performance on imbalanced datasets.
+* **`Base Model`** 
+    **Layers unfrozen for fine-tuning:**
+    * Tested values: 20, 30, 40 layers unfrozen
+    * Best Value: 30 layers unfrozen for optimal feature extraction.
+* **`Optimizer`**
+    * Values Tested: Adam, AdamW, RMSprop
+    * Best Value: Adam with a learning rate of 0.0005.
+
+
+
+
+
