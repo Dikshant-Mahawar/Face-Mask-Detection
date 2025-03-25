@@ -134,7 +134,7 @@ The evaluation metrics ensure the model's robustness and accuracy in identifying
 5. **`Visualization of Results`**  
    * The top 3 images are displayed in a *3x3 grid* showing the *original image, extracted mask, and ground truth mask* for visual comparison.
 
-## 4. PART-D
+## 4. Part D
 1. **`Data Loading and Preprocessing:`**
     * Load image and segmentation file paths, ensuring both exist.  
     * Split data into training (80%) and validation (20%) sets.  
@@ -180,7 +180,7 @@ The evaluation metrics ensure the model's robustness and accuracy in identifying
 
 4. **`Training Process:`**  
 
-    * Data Preparation:*  
+    * Data Preparation:  
         * Convert dataset from generator to NumPy arrays.  
         * Normalize images (0 to 1) and masks (binary, scaled to [0,1]).  
 
@@ -188,7 +188,7 @@ The evaluation metrics ensure the model's robustness and accuracy in identifying
         * Use *Keras Tuner* (RandomSearch) with 10 trials.  
         * Optimize based on *validation loss*.  
 
-    3. *Best Model Selection:*  
+    * Best Model Selection:  
         * Retrieve the best hyperparameters from tuning.  
         * Build and compile the U-Net model with optimal settings.  
 
@@ -243,6 +243,28 @@ This face mask detection model includes several important hyperparameters and te
 * **`Optimizer`**
     * Values Tested: Adam, AdamW, RMSprop
     * Best Value: Adam with a learning rate of 0.0003.
+
+## 2. Part D
+
+*    **`Tuning Key Parameters:'**  
+    * The tuning process optimizes critical hyperparameters like *dropout rate (0.1-0.4), batch normalization (enabled/disabled), base filters (16, 32, 64), model depth (3-5 layers), and learning rate (1e-4 to 1e-2)*.  
+    * This ensures a balance between model complexity, generalization, and performance.  
+
+*    **`Search Strategy - Random Search:`**  
+    * The tuner uses *RandomSearch* to explore various hyperparameter combinations efficiently.  
+    * Unlike Grid Search (which tests all possible values), Random Search selects random combinations, often leading to quicker convergence with fewer trials.  
+
+*    **`Optimization Objective - Validation Loss:`**  
+    * The model is tuned based on *minimizing validation loss*, ensuring that the chosen hyperparameters improve segmentation performance.  
+    * This prevents overfitting to training data and ensures the model generalizes well.  
+
+*    **`Best Hyperparameter Selection & Model Retraining:`**  
+    * After running *10 trials*, the best set of hyperparameters is selected.  
+    * The final U-Net model is then *rebuilt with the best parameters* and trained for *50 epochs*, incorporating techniques like Early Stopping and ReduceLROnPlateau for stability.  
+
+*    **`Efficient Training with Adaptive Learning Rate:`**  
+    * *ReduceLROnPlateau* is used to *dynamically adjust the learning rate*, preventing overshooting and ensuring convergence.  
+    * This allows the model to fine-tune its weights effectively, improving segmentation accuracy without unnecessary computation.
 
 # PROBLEM FACED
 
@@ -370,6 +392,14 @@ The CNN model demonstrated slightly better performance than the traditional ML c
 * **`SVM:`** Achieved an accuracy of 93%.
 * **`Random Forest:`** Achieved an accuracy of 91%.
 * **`Neural Network:`** Achieved an accuracy of 94.02%.
+
+## PART-C
+After completing the segmentation for entire dataset, the average IoU is calculated. It turns out to be 0.44 . Some of the segmented outputs are shown below along with the ground truths:
+
+![Trads](Traditional/mask.jpeg)
+
+## PART-D
+
 
 **ML CLASSIFIERS VS CNN:**
 
