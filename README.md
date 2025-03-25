@@ -126,10 +126,10 @@ This face mask detection model includes several important hyperparameters and te
     * Best Value: 0.0005 (Improved convergence stability).
 * **`EPOCHS`** 
     * Values Tested: 30, 50, 70
-    * Best Value: 50 (Good balance between convergence and overfitting).
+    * Best Value: 16 (Good balance between convergence and overfitting).
 * **`Dropout Rate`**
-    * Values Tested: 0.3, 0.4, 0.5
-    * Best Value: 0.4 (Effectively reduced overfitting without sacrificing performance).
+    * Values Tested: 0.3, 0.4, 0.5,0.6,0.7
+    * Best Value: 0.55 (Effectively reduced overfitting without sacrificing performance).
 * **`Data Augmentation`**
     * Augmentation techniques tested:
         * Rotation Range: 10°, 15°, 20° → Best: 15°
@@ -141,11 +141,11 @@ This face mask detection model includes several important hyperparameters and te
     * Balanced class weighting significantly improved performance on imbalanced datasets.
 * **`Base Model`** 
     * Layers unfrozen for fine-tuning:
-        * Tested values: 20, 30, 40 layers unfrozen
-        * Best Value: 30 layers unfrozen for optimal feature extraction.
+        * Tested values: 20, 30, 40, 50, 60, 70, 80 layers unfrozen
+        * Best Value: 60 layers unfrozen for optimal feature extraction.
 * **`Optimizer`**
     * Values Tested: Adam, AdamW, RMSprop
-    * Best Value: Adam with a learning rate of 0.0005.
+    * Best Value: Adam with a learning rate of 0.0003.
 
 # PROBLEM FACED
 
@@ -237,6 +237,17 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **Test Precision** | 94.02% |
 | **Test Recall**    | 94.02% |
 | **Test AUC**       | 0.9712 |
+
+## PART-B
+**`Key Improvements to Control Overfitting: `**
+    1. Enhanced data augmentation for better generalization.
+    2. Increased dropout rates for stronger regularization.
+    3. Added L2 regularization in dense layers.
+    4. Reduced learning rate for stable convergence.
+    5. Frozen more layers in MobileNetV2 to prevent overfitting on small datasets.
+    6. Balanced the number of epochs with early stopping to prevent over-training.
+
+
 
 
 
