@@ -182,10 +182,10 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
 
 # RESULTS
+## PART-A
+### SVM
 
-## SVM
-
-### Classification Report
+#### Classification Report
 
 | Class | Precision | Recall | F1-Score | Support |
 |-------|-----------|--------|----------|---------|
@@ -197,7 +197,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 
 ---
 
-### Confusion Matrix
+#### Confusion Matrix
 
 | Actual \ Predicted | 0 | 1 |
 |--------------------|----|----|
@@ -205,9 +205,9 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **1 (With Mask)** | 17 | 416 |
 
 
-## RANDOM FOREST CLASSIFIER
+### RANDOM FOREST CLASSIFIER
 
-### Classification Report
+#### Classification Report
 
 | Class | Precision | Recall | F1-Score | Support |
 |-------|-----------|--------|----------|---------|
@@ -219,7 +219,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 
 ---
 
-### Confusion Matrix
+#### Confusion Matrix
 
 | Actual \ Predicted | 0 | 1 |
 |--------------------|----|----|
@@ -227,9 +227,9 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **1 (With Mask)** | 15 | 418 |
 
 
-## NEURAL NETWORK CLASSIFIER
+### NEURAL NETWORK CLASSIFIER
 
-### Model Performance Metrics
+#### Model Performance Metrics
 
 | Metric          | Value  |
 |----------------|--------|
