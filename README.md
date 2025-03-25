@@ -248,9 +248,17 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     6. Balanced the number of epochs with early stopping to prevent over-training.
 
 ![acc1](CNN_Images/fin_acc.png)
+This graph illustrates the Training Accuracy and Validation Accuracy of our Convolutional Neural Network (CNN) model over multiple epochs.
+
 **`Accuracy: 0.97`**
+
 ![acc1](CNN_Images/fin_loss.png)
+This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
+
 ![acc1](CNN_Images/fin_conf.png)
+This confusion matrix shows that the model achieved strong performance, with 92 correct predictions for "No Mask" and 380 correct predictions for "Mask." There are minimal misclassifications, indicating effective handling of overfitting and improved generalization.
+
+
 
 
 
