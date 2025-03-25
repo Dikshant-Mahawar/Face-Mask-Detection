@@ -246,7 +246,7 @@ This face mask detection model includes several important hyperparameters and te
 
 ## 2. Part D
 
-*    **`Tuning Key Parameters:'**  
+*    **`Tuning Key Parameters:`**  
     * The tuning process optimizes critical hyperparameters like *dropout rate (0.1-0.4), batch normalization (enabled/disabled), base filters (16, 32, 64), model depth (3-5 layers), and learning rate (1e-4 to 1e-2)*.  
     * This ensures a balance between model complexity, generalization, and performance.  
 
@@ -376,6 +376,27 @@ This graph illustrates the Training Accuracy and Validation Accuracy of our Conv
 ![acc1](CNN_Images/fin_loss.png)
 This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
 
+## PART-C
+After completing the segmentation for entire dataset, the average IoU is calculated. It turns out to be 0.44 . Some of the segmented outputs are shown below along with the ground truths:
+
+![Trads](Traditional/mask.jpeg)
+
+## PART-D
+
+* **`The Change in Training v/s Validation Accuracy and Loss as Epoch Increases`**
+
+![Trads](Traditional/graph.jpeg)
+
+* **`Model Accuracy from Hyperparameter Tuning`**
+
+![Trads](Traditional/models.jpeg)
+
+* **`Hyperparameter Tuning Results for Various Models`**
+![Trads](Traditional/pcp.jpeg)
+
+* **`Sample Masks and Ground Truth from Best U-Net Model`**
+![Trads](Traditional/mask2.jpeg)
+
 
 # COMPARISON OF ML CLASSIFIERS AND CNN
 ## Feature Extraction
@@ -392,14 +413,6 @@ The CNN model demonstrated slightly better performance than the traditional ML c
 * **`SVM:`** Achieved an accuracy of 93%.
 * **`Random Forest:`** Achieved an accuracy of 91%.
 * **`Neural Network:`** Achieved an accuracy of 94.02%.
-
-## PART-C
-After completing the segmentation for entire dataset, the average IoU is calculated. It turns out to be 0.44 . Some of the segmented outputs are shown below along with the ground truths:
-
-![Trads](Traditional/mask.jpeg)
-
-## PART-D
-
 
 **ML CLASSIFIERS VS CNN:**
 
