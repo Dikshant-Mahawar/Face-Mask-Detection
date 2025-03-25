@@ -439,7 +439,6 @@ Upon examining the provided images, several issues with the traditional segmenta
 
 * Blackened Top Section:** The upper portion of the segmented images is consistently blacked out, suggesting a post-processing step was used to mask areas that were repeatedly misclassified. This indicates a workaround for persistent errors rather than an effective segmentation solution.  
 
----
 
 2. **`U-Net Segmentation Analysis`**  
 
