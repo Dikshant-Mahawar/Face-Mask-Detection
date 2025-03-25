@@ -274,16 +274,15 @@ The CNN model demonstrated slightly better performance than the traditional ML c
 * **`Random Forest:`** Achieved an accuracy of 91%.
 * **`Neural Network:`** Achieved an accuracy of 94.02%.
 
-**Advantages and Disadvantages:**
+**ML CLASSIFIERS VS CNN:**
 
-| Feature                       | ML Classifiers (SVM, RF, NN)                                                              | CNN                                                                                                                                          |
+| Feature                       | ML Classifiers                                                               | CNN                                                                                                                                          |
 | :---------------------------- | :------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
-| Feature Engineering           | Requires manual feature extraction (HOG, LBP).  This can be time-consuming and may not capture all relevant information.  Feature quality is crucial. | Learns features automatically from data.  No manual intervention needed. Can adapt to specific nuances of the dataset.                             |
-| Feature Representation        | Feature representation limited by the design and effectiveness of HOG and LBP.                 | Can learn complex, hierarchical feature representations that are tailored to the classification task.                                      |
-| Generalization              | Potentially limited generalization if hand-engineered features are not robust to variations. | Better generalization due to the ability to learn robust features and adapt to variations in the data.                                    |
-| Computational Complexity      | Lower computational complexity for training with a small number of data points.                 | Higher computational complexity, especially during training, due to the large number of parameters in the network.                          |
+| Feature Engineering           | Manual feature extraction using methods like HOG and LBP can be quite time-consuming and may still miss some important details. The quality of these features plays a key role in the model's overall performance. | Automatically learns features directly from the data, eliminating the need for manual intervention. This allows the model to adapt to the unique patterns and characteristics of the dataset.                             |
+| Feature Representation        | The quality of feature representation depends heavily on the design and effectiveness of HOG and LBP, which may limit the model's ability to capture complex patterns.                 | Capable of learning intricate and multi-level features directly from the data, allowing for a more customized and effective representation suited to the classification task.                                      |
+| Computational Complexity      | Training with fewer data points requires less computational power, making traditional ML models more efficient in such scenarios.                 | Training deep learning models like CNNs demands higher computational resources because of the extensive number of parameters involved, making the process more time-consuming and hardware-intensive.                          |
 | Data Requirements           | Can perform reasonably well with smaller datasets, as feature engineering reduces complexity.  | Requires a larger amount of training data to learn effective features and prevent overfitting.                                                |
-| Architecture Design         | A relatively simple model, so easier to design. | A very complex model so requires a detailed knowledge to build this correctly. |
+
 
 
 
