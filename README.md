@@ -457,7 +457,7 @@ In comparison, the U-Net model delivers significantly improved segmentation perf
 ## Running the code
 
 ### Instructions to Run
-In the directory Code, there are 4 ipynb files - each corresponding to different parts - A,B,C,D (Part_A.ipynb,Part_B.ipynb,Part_C.ipynb,Part_D.ipynb)
+In the directory Codes, there are 4 ipynb files - each corresponding to different parts - A,B,C,D (Part_A.ipynb,Part_B.ipynb,Part_C.ipynb,Part_D.ipynb)
 
 The output images for Part C and Part D are generated in the notebook when the code is run
 
