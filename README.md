@@ -212,57 +212,57 @@ The evaluation metrics ensure the model's robustness and accuracy in identifying
 ## 1. Part B
 This face mask detection model includes several important hyperparameters and techniques that were adjusted to improve performance. The following key hyperparameters and experiments were conducted:
 
-* **`IMG_SIZE`** 
+1. **`IMG_SIZE`** 
     * Values Tested: 64, 96, 128
     * Best Value: 96 (Balanced performance between model complexity and accuracy).
-* **`BATCH_SIZE`**  
+2. **`BATCH_SIZE`**  
     * Values Tested: 16, 32, 64
     * Best Value: 32 (Optimal balance between convergence speed and memory efficiency).
-* **`LEARNING_RATE`**
+3. **`LEARNING_RATE`**
     * Values Tested: 0.001, 0.0005, 0.0001
     * Best Value: 0.0005 (Improved convergence stability).
-* **`EPOCHS`** 
+4. **`EPOCHS`** 
     * Values Tested: 30, 50, 70
     * Best Value: 16 (Good balance between convergence and overfitting).
-* **`Dropout Rate`**
+5. **`Dropout Rate`**
     * Values Tested: 0.3, 0.4, 0.5,0.6,0.7
     * Best Value: 0.55 (Effectively reduced overfitting without sacrificing performance).
-* **`Data Augmentation`**
+6. **`Data Augmentation`**
     * Augmentation techniques tested:
         * Rotation Range: 10°, 15°, 20° → Best: 15°
         * Width/Height Shift Range: 0.05, 0.1, 0.2 → Best: 0.1
         * Shear Range: 0.05, 0.1, 0.2 → Best: 0.1
         * Zoom Range: 0.05, 0.1, 0.2 → Best: 0.1
         * Horizontal Flip: Enabled (Improved generalization).
-* **`Class Weighting`**
+7. **`Class Weighting`**
     * Balanced class weighting significantly improved performance on imbalanced datasets.
-* **`Base Model`** 
+8. **`Base Model`** 
     * Layers unfrozen for fine-tuning:
         * Tested values: 20, 30, 40, 50, 60, 70, 80 layers unfrozen
         * Best Value: 60 layers unfrozen for optimal feature extraction.
-* **`Optimizer`**
+9. **`Optimizer`**
     * Values Tested: Adam, AdamW, RMSprop
     * Best Value: Adam with a learning rate of 0.0003.
 
 ## 2. Part D
 
-*    **`Tuning Key Parameters:`**  
+1.    **`Tuning Key Parameters:`**  
     * The tuning process optimizes critical hyperparameters like *dropout rate (0.1-0.4), batch normalization (enabled/disabled), base filters (16, 32, 64), model depth (3-5 layers), and learning rate (1e-4 to 1e-2)*.  
     * This ensures a balance between model complexity, generalization, and performance.  
 
-*    **`Search Strategy - Random Search:`**  
+2.    **`Search Strategy - Random Search:`**  
     * The tuner uses *RandomSearch* to explore various hyperparameter combinations efficiently.  
     * Unlike Grid Search (which tests all possible values), Random Search selects random combinations, often leading to quicker convergence with fewer trials.  
 
-*    **`Optimization Objective - Validation Loss:`**  
+3.    **`Optimization Objective - Validation Loss:`**  
     * The model is tuned based on *minimizing validation loss*, ensuring that the chosen hyperparameters improve segmentation performance.  
     * This prevents overfitting to training data and ensures the model generalizes well.  
 
-*    **`Best Hyperparameter Selection & Model Retraining:`**  
+4.    **`Best Hyperparameter Selection & Model Retraining:`**  
     * After running *10 trials*, the best set of hyperparameters is selected.  
     * The final U-Net model is then *rebuilt with the best parameters* and trained for *50 epochs*, incorporating techniques like Early Stopping and ReduceLROnPlateau for stability.  
 
-*    **`Efficient Training with Adaptive Learning Rate:`**  
+5.    **`Efficient Training with Adaptive Learning Rate:`**  
     * *ReduceLROnPlateau* is used to *dynamically adjust the learning rate*, preventing overshooting and ensuring convergence.  
     * This allows the model to fine-tune its weights effectively, improving segmentation accuracy without unnecessary computation.
 
