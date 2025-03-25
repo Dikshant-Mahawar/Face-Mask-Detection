@@ -1,4 +1,4 @@
-# Face Detection 
+# FACE DETECTION
 This project focuses on the classification and segmentation of face masks in images. The following techniques have been employed:
 
 * Machine Learning Classifiers: Random Forest, SVM, and Neural Network
@@ -14,13 +14,13 @@ The methodology, along with detailed results and comparisons between traditional
 * Bhavya Kapadia (IMT2022095)
 
 
-# Dataset
+# DATASET
 
 For classification tasks, the dataset used is: <a>https://github.com/chandrikadeb7/Face-Mask-Detection/tree/master/dataset</a>. It contains images of people with and without face masks.
 
 For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD</a>. It contains the ground truth face masks in the form of binary images.
 
-# Methodology
+# METHODOLOGY
 
 ## 2. Part B
 1. **Data Loading and Preprocessing**
@@ -84,7 +84,7 @@ y_true = np.argmax(y_test, axis=1)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
 
-# Hyperparameters Tuning
+# HYPERPARAMETER TUNING
 
 ## 1. Part B
 This face mask detection model includes several important hyperparameters and techniques that were adjusted to improve performance. The following key hyperparameters and experiments were conducted:
@@ -156,6 +156,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
 
 
+# RESULTS
 
 
 
