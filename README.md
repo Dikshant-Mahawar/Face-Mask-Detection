@@ -80,7 +80,7 @@ We have implemented two Machine Learning Classifiers and one Neural Network Clas
 
     * The output layer uses Softmax activation for binary classification (mask/no mask).
 
-![x](CNN_Images/Screenshot 2025-03-24 at 7.58.59 PM)
+![imges](CNN_Images/Screenshot%202025-03-24%20at%207.58.35%E2%80%AFPM.png)
 
 Optimizer: Adam optimizer with a learning rate of 0.0005.
 
