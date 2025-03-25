@@ -52,7 +52,7 @@ We have implemented two Machine Learning Classifiers and one Neural Network Clas
 
 
 ## 2. Part B
-1. **Data Loading and Preprocessing**
+1. **`Data Loading and Preprocessing`**
 
 * Image Size: 96x96 pixels
 
@@ -64,7 +64,7 @@ We have implemented two Machine Learning Classifiers and one Neural Network Clas
 
 * Data Augmentation: Applied transformations like rotation, width/height shift, shear, zoom, and horizontal flip using ImageDataGenerator to enhance model generalization.
 
-2. **Model Definition (CNN)**
+2. **`Model Definition (CNN)`**
 
 * Base Model: MobileNetV2 (pre-trained on ImageNet, with the top layer removed).
 
@@ -88,7 +88,7 @@ Loss Function: Categorical Crossentropy.
 
 Class Weights: Balanced to handle class imbalance effectively.
 
-3. Training
+3. **`Training`**
 
 The model is trained for 50 epochs with a batch size of 32.
 
@@ -98,7 +98,7 @@ Data augmentation enhances the dataset by introducing variability in image trans
 
 ![x](CNN_Images/Screenshot%202025-03-24%20at%207.59.20%E2%80%AFPM.png)
 
-4. Evaluation
+4. **`Evaluation`**
 
 Accuracy & Loss Graphs: Plotted for both training and validation data.
 
@@ -113,7 +113,8 @@ y_true = np.argmax(y_test, axis=1)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
 
-## 2. Part C
+## 3. Part C
+
 
 
 # HYPERPARAMETER TUNING
