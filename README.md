@@ -227,7 +227,7 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **1 (With Mask)** | 15 | 418 |
 
 
-### NEURAL NETWORK CLASSIFIER
+## NEURAL NETWORK CLASSIFIER
 
 ### Model Performance Metrics
 
