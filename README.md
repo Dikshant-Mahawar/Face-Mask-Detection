@@ -153,30 +153,56 @@ The evaluation metrics ensure the model's robustness and accuracy in identifying
     * Python – General scripting and dataset management.
 
 3. **`Model Definition (U-Net):`**
-    *Input Layer:*  
-        - Accepts (128, 128, 3) RGB images.  
+    * Input Layer: 
+        * Accepts (128, 128, 3) RGB images.  
 
-    *Encoder (Contracting Path):*  
-        - depth configurable (3-5 layers).  
-        - base_filters chosen from {16, 32, 64}, doubling at each layer.  
-        - Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
-        - MaxPooling and Dropout (dropout_rate between 0.1-0.4) after each block.  
+    * Encoder (Contracting Path):  
+        * depth configurable (3-5 layers).  
+        * base_filters chosen from {16, 32, 64}, doubling at each layer.  
+        * Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
+        * MaxPooling and Dropout (dropout_rate between 0.1-0.4) after each block.  
 
-    *Bottleneck:*  
-        - Two Conv2D layers at the lowest resolution.  
+    * Bottleneck:  
+        * Two Conv2D layers at the lowest resolution.  
 
-    *Decoder (Expanding Path):*  
-        - Upsampling and skip connections from the encoder.  
-        - Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
-        - Dropout for regularization.  
+    * Decoder (Expanding Path):  
+        * Upsampling and skip connections from the encoder.  
+        * Two Conv2D layers per block (ReLU activation, optional BatchNorm).  
+        * Dropout for regularization.  
 
-    *Output Layer:*  
-        - Conv2D with a 1x1 filter and sigmoid activation for binary segmentation.  
+    * Output Layer:  
+        * Conv2D with a 1x1 filter and sigmoid activation for binary segmentation.  
 
-    *Compilation:*  
-        - Optimizer: Adam with a tunable learning rate (1e-4 to 1e-2).  
-        - Loss: Binary Cross-Entropy.  
-        - Metrics: Accuracy, IoU, Dice Score.
+    * Compilation:  
+        * Optimizer: Adam with a tunable learning rate (1e-4 to 1e-2).  
+        * Loss: Binary Cross-Entropy.  
+        * Metrics: Accuracy, IoU, Dice Score.
+
+4. **`Training Process:`**  
+
+    * Data Preparation:*  
+        * Convert dataset from generator to NumPy arrays.  
+        * Normalize images (0 to 1) and masks (binary, scaled to [0,1]).  
+
+    * Hyperparameter Tuning:  
+        * Use *Keras Tuner* (RandomSearch) with 10 trials.  
+        * Optimize based on *validation loss*.  
+
+    3. *Best Model Selection:*  
+        * Retrieve the best hyperparameters from tuning.  
+        * Build and compile the U-Net model with optimal settings.  
+
+    * Final Training: 
+        * Train the best model with batch_size=16 for up to *50 epochs*.  
+        * *Early Stopping* (patience=5) to prevent overfitting.  
+        * *ReduceLROnPlateau* (patience=3, factor=0.5) for adaptive learning rate.  
+
+    * Model Saving:  
+        * Save the best trained model as *"unet_best_tuned.h5"*.
+
+5. **`Evaluation Process:`**  
+    * The model is evaluated using *IoU and Dice Score*, where IoU measures overlap and Dice emphasizes similarity.  
+    * The best model achieved *93.08% validation IoU* and *96.40% validation Dice accuracy*, indicating high segmentation performance.
 
 
 
