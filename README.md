@@ -129,7 +129,7 @@ This face mask detection model includes several important hyperparameters and te
 
 This graph illustrates the Training Accuracy and Validation Accuracy of our Convolutional Neural Network (CNN) model over multiple epochs.
 
-### Observations
+### Accuracy Curve
 * **`Early Phase (0-5 Epochs):`**
     *The model quickly learns basic patterns, showing a steep rise in both training and validation accuracy.
 
@@ -144,7 +144,7 @@ This graph illustrates the Training Accuracy and Validation Accuracy of our Conv
 
 This graph represents the Training Loss and Validation Loss of our Convolutional Neural Network (CNN) model across multiple epochs.
 
-### Observations
+### Loss Curve
 * **`Early Phase (0-5 Epochs):`**
     * Both training and validation losses decrease rapidly, showing that the model is learning fundamental patterns effectively.
     * The initial spikes in validation loss indicate unstable learning in the early stages, which is common.
