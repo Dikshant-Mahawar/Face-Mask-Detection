@@ -27,17 +27,17 @@ For segmentation tasks, the dataset used is: <a>https://github.com/sadjadrz/MFSD
 #### The code is divided into 3 parts: Feature Extraction, Data Preprocessing and Machine Learning Classifier Training
 
 
-### 1. Feature Extraction
+1. **`Feature Extraction`**
 
 **Histogram of Oriented Gradients (HOG):** HOG extracts structural and gradient information, making it effective for detecting object shapes and edges. The image is first resized to 128×128, converted to grayscale, and then processed into gradient histograms using 9 orientations, 8×8 pixel cells, and 2×2 block normalization.  
 
 **Local Binary Patterns (LBP):** LBP serves as a texture descriptor by analyzing neighboring pixel intensities to generate a binary pattern. Here, the grayscale image is transformed using an 8-point circular neighborhood LBP, and a histogram of these patterns is computed and normalized. This helps capture texture details, complementing HOG for improved classification.
 
-### 2. Data Preprocessing
+2. **`Data Preprocessing`**
 
 The code preprocesses images by resizing them to 128×128 and converting them to grayscale for consistency. HOG extracts shape-based features, while LBP captures texture patterns. The extracted features are normalized using **StandardScaler** to ensure uniform distribution. The dataset is then split into **80% training and 20% testing** using **train-test split**, with **stratify** preserving class balance for better model performance. Hyperparameter tuning is done using GridSearch CV and RandomizedSearch CV.
 
-### 3. Training The Machine Learning Models
+3. **`Training The Machine Learning Models`**
 
 We have implemented two Machine Learning Classifiers and one Neural Network Classifier. The models are as follows:
 
@@ -112,6 +112,9 @@ y_true = np.argmax(y_test, axis=1)
 ![a](CNN_Images/Screenshot%202025-03-24%20at%207.59.42%E2%80%AFPM.png)
 
 The evaluation metrics ensure the model's robustness and accuracy in identifying masked and unmasked individuals.
+
+## 2. Part C
+
 
 # HYPERPARAMETER TUNING
 
