@@ -239,13 +239,20 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **Test AUC**       | 0.9712 |
 
 ## PART-B
-## Key Improvements to Control Overfitting: 
+### Key Improvements to Control Overfitting: 
     1. Enhanced data augmentation for better generalization.
     2. Increased dropout rates for stronger regularization.
     3. Added L2 regularization in dense layers.
     4. Reduced learning rate for stable convergence.
     5. Frozen more layers in MobileNetV2 to prevent overfitting on small datasets.
     6. Balanced the number of epochs with early stopping to prevent over-training.
+
+![acc1](CNN_Images/fin_acc.png)
+**`Accuracy: 0.97`**
+![acc1](CNN_Images/fin_loss.png)
+![acc1](CNN_Images/fin_conf.png)
+
+
 
 
 
