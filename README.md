@@ -184,11 +184,10 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
     * The training loss stabilizes near zero, while the validation loss plateaus at a higher value.
     * This growing gap suggests overfitting, where the model memorizes the training data rather than generalizing well to new data.
 
+
 # RESULTS
 
-## PART-1
-
-### SVM
+## SVM
 
 ### Classification Report
 
@@ -242,5 +241,4 @@ This graph represents the Training Loss and Validation Loss of our Convolutional
 | **Test Precision** | 94.02% |
 | **Test Recall**    | 94.02% |
 | **Test AUC**       | 0.9712 |
-
 
